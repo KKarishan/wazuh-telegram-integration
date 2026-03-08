@@ -1,0 +1,23 @@
+# =============================================================================
+# .gitignore — Wazuh Telegram Integration
+# =============================================================================
+
+# !! IMPORTANT: Never commit real credentials !!
+config.py
+secrets.py
+.env
+*.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Test files with real alert data (may contain sensitive IPs/usernames)
+/tmp/
+test_alert.json
+*.test.json
+
+# OS files
+.DS_Store
+Thumbs.db
