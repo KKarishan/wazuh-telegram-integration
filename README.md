@@ -2,6 +2,9 @@
 
 A custom integration for **Wazuh SIEM** that forwards security alerts to a **Telegram Bot** in real time. Designed for home labs and small environments to gain instant mobile visibility into security events — with attacker IP, machine name, and MITRE ATT&CK context.
 
+![lab overview](screenshots/full-overview.png)
+
+
 > 📸 **Live Alert Example:**
 > ```
 > 🚨 WAZUH ALERT - Level 10
@@ -17,6 +20,8 @@ A custom integration for **Wazuh SIEM** that forwards security alerts to a **Tel
 > ━━━━━━━━━━━━━━━━━━━━
 > ```
 
+![Telegram Alert](screenshots/telegram-alert-preview.png)
+
 ---
 
 ## 🚀 Features
@@ -31,17 +36,9 @@ A custom integration for **Wazuh SIEM** that forwards security alerts to a **Tel
 
 ## 🏗️ Architecture
 
-```
-Wazuh Manager
-     │
-     │  Alert triggered (Level ≥ 7)
-     ▼
-/var/ossec/integrations/custom-telegram.py
-     │
-     │  HTTP POST (Telegram Bot API)
-     ▼
-Telegram Bot  ──►  Your Phone 📱
-```
+
+![Architecture flow](screenshots/workflow.png)
+
 
 ---
 
@@ -69,8 +66,8 @@ wazuh-telegram-integration/
 │   └── custom-telegram-v2.py          # v2 — Enhanced with attacker details & MITRE IDs
 │
 └── docs/
-    ├── 01-create-telegram-bot.md      # Phase 1: Set up your Telegram Bot
-    └── 02-integration-script-and-wazuh-config.md  # Phase 2 & 3: Deploy & configure
+    ├── create-telegram-bot.md      # Phase 1: Set up your Telegram Bot
+    └── integration-wazuh-config.md  # Phase 2 & 3: Deploy & configure
 ```
 
 ---
@@ -78,7 +75,7 @@ wazuh-telegram-integration/
 ## ⚡ Quick Start
 
 ### Step 1 — Create Your Telegram Bot
-Follow **[Phase 1: Create Your Telegram Bot](docs/01-create-telegram-bot.md)** to get your `TOKEN` and `CHAT_ID`.
+Follow **[Phase 1: Create Your Telegram Bot](docs/create-telegram-bot.md)** to get your `TOKEN` and `CHAT_ID`.
 
 ### Step 2 — Deploy the Script
 ```bash
@@ -121,8 +118,8 @@ sudo /var/ossec/integrations/custom-telegram.py /tmp/test_alert.json
 
 | Document | Description |
 |---|---|
-| [01 — Create Telegram Bot](docs/01-create-telegram-bot.md) | BotFather setup, API token, Chat ID |
-| [02 — Integration & Config](docs/02-integration-script-and-wazuh-config.md) | Script deployment, ossec.conf, testing |
+| [01 — Create Telegram Bot](docs/create-telegram-bot.md) | BotFather setup, API token, Chat ID |
+| [02 — Integration & Config](docs/integration-wazuh-config.md) | Script deployment, ossec.conf, testing |
 
 ---
 

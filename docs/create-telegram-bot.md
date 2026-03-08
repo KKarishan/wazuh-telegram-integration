@@ -48,4 +48,4 @@ You should now have two values saved:
 
 ---
 
-➡️ **Next:** [Phase 2 — Create the Integration Script](02-integration-script-and-wazuh-config.md)
+➡️ **Next:** [Phase 2 — Create the Integration Script](integration-wazuh-config.md)

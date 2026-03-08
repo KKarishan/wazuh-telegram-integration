@@ -19,7 +19,7 @@
 #   Called automatically by Wazuh Manager when an alert is triggered.
 #   Manual test: sudo /var/ossec/integrations/custom-telegram.py /tmp/test_alert.json
 #
-# Author: [Your Name]
+# Author: Karishan
 # =============================================================================
 
 import sys
